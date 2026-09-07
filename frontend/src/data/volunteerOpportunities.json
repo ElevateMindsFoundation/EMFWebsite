@@ -1,0 +1,47 @@
+[
+  {
+    "id": "workshop-facilitator",
+    "title": "Workshop Facilitator",
+    "category": "Community & Training",
+    "location": "Remote",
+    "remote": true,
+    "spotsAvailable": 4,
+    "description": "Help run our free AI-literacy workshops for teachers, therapists, and families. No engineering background required — training provided."
+  },
+  {
+    "id": "ml-research-volunteer",
+    "title": "ML Research Volunteer",
+    "category": "AI for Learning",
+    "location": "Remote",
+    "remote": true,
+    "spotsAvailable": 3,
+    "description": "Support our small research team improving adaptive learning and early-diagnosis models. Python and ML experience helpful."
+  },
+  {
+    "id": "classroom-pilot-liaison",
+    "title": "Classroom Pilot Liaison",
+    "category": "Deaf & Hearing Support",
+    "location": "Cary, NC",
+    "remote": false,
+    "spotsAvailable": 2,
+    "description": "Be the on-the-ground point of contact for a classroom piloting our Sign Language Avatar tool this fall."
+  },
+  {
+    "id": "device-assembly-volunteer",
+    "title": "Device Assembly Volunteer",
+    "category": "Assistive AI Devices",
+    "location": "Cary, NC",
+    "remote": false,
+    "spotsAvailable": 6,
+    "description": "Help assemble and quality-check Eye-Tracking Access Kits before they're shipped to families, free of charge."
+  },
+  {
+    "id": "caregiver-circle-cofacilitator",
+    "title": "Caregiver Circle Co-Facilitator",
+    "category": "Families & Community",
+    "location": "Remote",
+    "remote": true,
+    "spotsAvailable": 2,
+    "description": "Co-host our twice-monthly peer-support circle for parents and caregivers of children with disabilities."
+  }
+]

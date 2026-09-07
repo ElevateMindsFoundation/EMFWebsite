@@ -1,0 +1,42 @@
+[
+  {
+    "id": "2025-annual-impact-report",
+    "type": "news",
+    "title": "Our 2025 Impact Report Is Here",
+    "date": "2026-07-14",
+    "summary": "A look back at the families and programs we supported this year, and what's next.",
+    "body": "This year we expanded three of our core programs and welcomed new research partners focused on early diagnosis tools. The full report includes program-by-program breakdowns, caregiver feedback, and our roadmap for the coming year. A downloadable version will be available soon on the About Us page."
+  },
+  {
+    "id": "fall-family-orientation",
+    "type": "event",
+    "title": "Fall Family Toolkit Orientation",
+    "date": "2026-09-12",
+    "summary": "A free orientation session to help families set up their first Elevate Minds tool.",
+    "body": "Join us for a 90-minute virtual session where our team walks families through choosing and configuring the right free tool for their child, based on age, condition, and goals. No cost, no obligation — just bring your questions. Registration details will be posted closer to the date."
+  },
+  {
+    "id": "new-research-partnership",
+    "type": "news",
+    "title": "New Research Partnership on Early Diagnosis Models",
+    "date": "2026-06-02",
+    "summary": "We're partnering with a university developmental-pediatrics lab to improve our early screening tools.",
+    "body": "This partnership will help us validate and improve the Early Signals screening model with a larger, more diverse dataset, while keeping the tool free and available to every family who wants to use it as a conversation-starter with their pediatrician."
+  },
+  {
+    "id": "sign-language-avatar-classroom-pilot",
+    "type": "event",
+    "title": "Sign Language Avatar Classroom Pilot Kickoff",
+    "date": "2026-10-05",
+    "summary": "We're piloting our sign-language avatar tool in five new classrooms this fall.",
+    "body": "Building on last year's classroom deployments, this pilot brings the Sign Language Avatar tool to five additional classrooms, with a focus on gathering feedback from deaf students and their teachers to guide the next round of improvements."
+  },
+  {
+    "id": "volunteer-appreciation-note",
+    "type": "news",
+    "title": "Thank You to Our Volunteers",
+    "date": "2026-05-20",
+    "summary": "A note of appreciation for the volunteers who made this year's programs possible.",
+    "body": "None of our free programs would be possible without the technologists, educators, and therapists who volunteer their time. Thank you for everything you've contributed this year — from workshop facilitation to code reviews to classroom visits."
+  }
+]

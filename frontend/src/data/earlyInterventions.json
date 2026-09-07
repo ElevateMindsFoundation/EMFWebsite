@@ -1,0 +1,80 @@
+[
+  {
+    "id": "playful-starts",
+    "name": "Playful Starts",
+    "audience": "Children",
+    "description": "A gentle, play-based introduction to AI-assisted learning tools for children ages 3-7, run alongside a caregiver.",
+    "timeline": "8-week rolling cohort, one 45-minute session per week",
+    "successIndicators": [
+      "Increased comfort initiating communication",
+      "Consistent engagement across sessions",
+      "Caregiver-reported confidence using tools at home"
+    ],
+    "registrationOpen": true
+  },
+  {
+    "id": "sensory-friendly-classroom",
+    "name": "Sensory-Friendly Classroom Kit",
+    "audience": "Children",
+    "description": "A classroom starter kit and short teacher training for building sensory-friendly, AI-supported learning corners.",
+    "timeline": "Self-paced setup, ongoing support for the school year",
+    "successIndicators": [
+      "Reduced sensory-overload incidents",
+      "Teacher-reported ease of use",
+      "Increased on-task time during quiet corner use"
+    ],
+    "registrationOpen": true
+  },
+  {
+    "id": "voice-and-choice",
+    "name": "Voice & Choice",
+    "audience": "Youth",
+    "description": "AAC and communication-device onboarding for non-verbal youth ages 8-15, paired with a peer mentor.",
+    "timeline": "12-week program, biweekly sessions",
+    "successIndicators": [
+      "Growth in independently-initiated phrases",
+      "Reduced reliance on caregiver prompting",
+      "Positive peer-mentor feedback"
+    ],
+    "registrationOpen": true
+  },
+  {
+    "id": "focus-forward",
+    "name": "Focus Forward",
+    "audience": "Youth",
+    "description": "Executive-function coaching for teens with ADHD, supported by an adaptive task-planning app.",
+    "timeline": "10-week program, one session per week plus daily app use",
+    "successIndicators": [
+      "Improved task completion rate",
+      "Self-reported reduction in overwhelm",
+      "Consistent app engagement"
+    ],
+    "registrationOpen": false
+  },
+  {
+    "id": "family-toolkit-orientation",
+    "name": "Family Toolkit Orientation",
+    "audience": "Families",
+    "description": "A single orientation session that helps families choose and set up the right free Elevate Minds tools for their child.",
+    "timeline": "One 90-minute session, offered monthly",
+    "successIndicators": [
+      "Family leaves with a configured tool",
+      "Follow-up satisfaction survey score",
+      "Reduced support-request volume in first 30 days"
+    ],
+    "registrationOpen": true
+  },
+  {
+    "id": "caregiver-support-circle",
+    "name": "Caregiver Support Circle",
+    "audience": "Families",
+    "description": "A recurring peer-support circle for parents and caregivers of children with disabilities, with an optional AI-literacy segment.",
+    "timeline": "Ongoing, twice-monthly meetings",
+    "successIndicators": [
+      "Consistent attendance over 3+ sessions",
+      "Caregiver-reported reduction in isolation",
+      "Growth in peer-to-peer resource sharing"
+    ],
+    "registrationOpen": true
+  }
+]

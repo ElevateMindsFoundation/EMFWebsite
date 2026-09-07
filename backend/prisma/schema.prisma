@@ -1,0 +1,229 @@
+// Elevate Minds Foundation — backend data model (Phase C)
+// Datasource: PostgreSQL. See backend/.env.example for DATABASE_URL format.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  ADMIN
+  USER
+  CONTRIBUTOR
+}
+
+enum ProgramAudience {
+  CHILDREN
+  YOUTH
+  FAMILIES
+}
+
+enum HourLogStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum DonationType {
+  MONETARY
+  TIME_PLEDGE
+  PROJECT_PARTICIPATION
+}
+
+enum DonationStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+}
+
+enum NewsEventType {
+  NEWS
+  EVENT
+}
+
+// ---------------------------------------------------------------------------
+// Models
+// ---------------------------------------------------------------------------
+
+model User {
+  id                       String    @id @default(uuid())
+  email                    String    @unique
+  passwordHash             String
+  firstName                String
+  lastName                 String
+  role                     Role      @default(USER)
+  emailVerified            Boolean   @default(false)
+  emailVerificationToken   String?
+  emailVerificationExpires DateTime?
+  passwordResetToken       String?
+  passwordResetExpires     DateTime?
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
+
+  programRegistrations ProgramRegistration[]
+  volunteerHourLogs    VolunteerHourLog[]
+  donations            Donation[]
+
+  @@index([email])
+}
+
+model Innovation {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  domain       String
+  year         Int
+  images       String[]
+  videoUrl     String?
+  impactMetric String
+  teamMembers  String[]
+  createdAt    DateTime @default(now())
+
+  @@index([domain])
+  @@index([year])
+}
+
+model EarlyInterventionProgram {
+  id                String          @id @default(uuid())
+  name              String
+  description       String
+  audience          ProgramAudience
+  timelineText      String
+  successIndicators String[]
+  registrationOpen  Boolean         @default(false)
+  startDate         DateTime?
+  endDate           DateTime?
+
+  registrations ProgramRegistration[]
+
+  @@index([audience])
+}
+
+// Registrations are kept even if the parent program is removed (historical
+// record of who signed up), so the program FK is SetNull rather than Cascade.
+// userId is optional because guests can register with just name/email.
+model ProgramRegistration {
+  id          String   @id @default(uuid())
+  programId   String?
+  program     EarlyInterventionProgram? @relation(fields: [programId], references: [id], onDelete: SetNull)
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  name        String
+  email       String
+  submittedAt DateTime @default(now())
+
+  @@index([programId])
+  @@index([userId])
+}
+
+model VolunteerOpportunity {
+  id              String   @id @default(uuid())
+  title           String
+  description     String
+  category        String
+  location        String
+  isRemote        Boolean  @default(false)
+  spotsAvailable  Int      @default(0)
+  tags            String[]
+
+  hourLogs VolunteerHourLog[]
+
+  @@index([category])
+}
+
+// Hour logs are tied to a specific volunteer opportunity; if the opportunity
+// is deleted the logged hours no longer mean anything on their own, so this
+// cascades. userId is required (you must be authenticated to log hours) but
+// still SetNull on delete so historical hour totals aren't silently lost if
+// a user account is removed.
+model VolunteerHourLog {
+  id             String                @id @default(uuid())
+  userId         String?
+  user           User?                 @relation(fields: [userId], references: [id], onDelete: SetNull)
+  opportunityId  String
+  opportunity    VolunteerOpportunity  @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  date           DateTime
+  hours          Decimal               @db.Decimal(5, 2)
+  notes          String?
+  status         HourLogStatus         @default(PENDING)
+  createdAt      DateTime              @default(now())
+
+  @@index([userId])
+  @@index([opportunityId])
+  @@index([status])
+}
+
+model Donation {
+  id                     String         @id @default(uuid())
+  userId                 String?
+  user                   User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  type                   DonationType
+  amountCents            Int?
+  currency               String         @default("usd")
+  stripePaymentIntentId  String?
+  status                 DonationStatus @default(PENDING)
+  targetProject          String?
+  pledgeDescription      String?
+  createdAt              DateTime       @default(now())
+
+  @@index([userId])
+  @@index([status])
+}
+
+model NewsEvent {
+  id          String        @id @default(uuid())
+  title       String
+  body        String
+  type        NewsEventType
+  eventDate   DateTime?
+  imageUrl    String?
+  publishedAt DateTime      @default(now())
+  isFeatured  Boolean       @default(false)
+
+  @@index([type])
+  @@index([publishedAt])
+}
+
+model TeamMember {
+  id        String  @id @default(uuid())
+  name      String
+  title     String
+  bio       String
+  photoUrl  String?
+  sortOrder Int     @default(0)
+
+  @@index([sortOrder])
+}
+
+model Testimonial {
+  id           String  @id @default(uuid())
+  authorName   String
+  relationship String
+  quote        String
+  photoUrl     String?
+  isFeatured   Boolean @default(false)
+}
+
+model ContactMessage {
+  id          String   @id @default(uuid())
+  name        String
+  email       String
+  subject     String
+  message     String
+  submittedAt DateTime @default(now())
+  isRead      Boolean  @default(false)
+}
+
+model NewsletterSubscriber {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  subscribedAt  DateTime @default(now())
+}

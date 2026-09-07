@@ -1,0 +1,37 @@
+[
+  {
+    "id": "priya-nandakumar",
+    "name": "Priya Nandakumar",
+    "title": "Co-Founder & Executive Director",
+    "bio": "Former special-education technologist focused on making adaptive learning tools genuinely usable in real classrooms.",
+    "initials": "PN"
+  },
+  {
+    "id": "marcus-webb",
+    "name": "Marcus Webb",
+    "title": "Co-Founder & Head of Engineering",
+    "bio": "Builds the on-device machine learning that powers our assistive tools, with a focus on offline-first reliability.",
+    "initials": "MW"
+  },
+  {
+    "id": "alina-fischer",
+    "name": "Dr. Alina Fischer",
+    "title": "Clinical Advisor, Developmental Pediatrics",
+    "bio": "Advises on early-diagnosis research and ensures every tool is grounded in real clinical practice.",
+    "initials": "AF"
+  },
+  {
+    "id": "dana-okafor",
+    "name": "Dana Okafor",
+    "title": "Program Director, Community & Training",
+    "bio": "Leads workshops and family onboarding, translating new tools into plain-language guidance for caregivers.",
+    "initials": "DO"
+  },
+  {
+    "id": "tomas-rivera",
+    "name": "Tomás Rivera",
+    "title": "Accessibility Lead",
+    "bio": "Champions WCAG-compliant design and works directly with deaf and non-verbal children to test new tools.",
+    "initials": "TR"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "adaptive-learning-paths",
+    "title": "Adaptive Learning Paths",
+    "domain": "AI for Learning",
+    "year": 2025,
+    "summary": "Personalized, AI-adjusted lesson sequencing for children with dyslexia, autism, and ADHD.",
+    "description": "Adaptive Learning Paths uses a lightweight recommendation model to reorder and re-pace lesson content in real time based on how a child is engaging with it. Sessions favor visual-heavy, low-distraction layouts, and the system slows down, repeats, or offers an alternate explanation style whenever it detects signs of frustration or disengagement — all without a child ever seeing a wrong-answer penalty.",
+    "impactMetric": "140+ children served",
+    "team": ["Priya Nandakumar", "Marcus Webb", "Dr. Alina Fischer"]
+  },
+  {
+    "id": "aac-communication-board",
+    "title": "AI Communication Board",
+    "domain": "Non-Verbal / AAC Support",
+    "year": 2025,
+    "summary": "Augmentative and alternative communication (AAC) boards with predictive symbol suggestions for non-verbal children.",
+    "description": "This tablet-based AAC board pairs a curated symbol library with a predictive model that learns each child's common phrases and suggests the next likely symbol, cutting the number of taps needed to build a sentence. Text-to-speech output supports multiple languages and age-appropriate voice profiles, and the board works fully offline once set up.",
+    "impactMetric": "95+ families equipped",
+    "team": ["Dana Okafor", "Tomás Rivera"]
+  },
+  {
+    "id": "eye-tracking-access",
+    "title": "Eye-Tracking Access Kit",
+    "domain": "Assistive AI Devices",
+    "year": 2024,
+    "summary": "Low-cost eye-tracking hardware plus software that lets children with limited mobility control a device with their gaze.",
+    "description": "Built around commodity webcam hardware and an on-device gaze-estimation model, the Eye-Tracking Access Kit gives children with significant motor impairments a way to navigate learning apps, communication boards, and games using only eye movement and dwell-based selection. Calibration takes under two minutes and adapts automatically as a child grows.",
+    "impactMetric": "60+ devices distributed",
+    "team": ["Dr. Alina Fischer", "Sam Whitfield"]
+  },
+  {
+    "id": "early-signals-screening",
+    "title": "Early Signals Screening Model",
+    "domain": "Early Diagnosis & Intervention",
+    "year": 2024,
+    "summary": "A machine-learning screening aid that helps caregivers and educators flag developmental signals early for follow-up.",
+    "description": "Early Signals is a short, game-like screening activity that a caregiver or teacher can run with a child in under ten minutes. A machine learning model trained on de-identified developmental milestone data highlights patterns worth a follow-up conversation with a pediatrician or specialist. It is explicitly a conversation-starter, not a diagnostic tool, and always presents its output alongside plain-language next steps.",
+    "impactMetric": "300+ screenings completed",
+    "team": ["Priya Nandakumar", "Dr. Wei Chen"]
+  },
+  {
+    "id": "sign-language-avatar",
+    "title": "Sign Language Avatar",
+    "domain": "Deaf & Hearing Support",
+    "year": 2023,
+    "summary": "Real-time speech-to-text and sign-language avatar translation for deaf children in classroom settings.",
+    "description": "The Sign Language Avatar project pairs live speech-to-text captioning with an animated avatar that renders captions as sign language, so deaf children can follow classroom instruction, assemblies, and video content without waiting on a human interpreter's availability. It currently supports ASL, with additional sign languages on the roadmap.",
+    "impactMetric": "40+ classrooms reached",
+    "team": ["Tomás Rivera", "Dana Okafor", "Marcus Webb"]
+  },
+  {
+    "id": "educator-ai-toolkit",
+    "title": "Educator AI Literacy Toolkit",
+    "domain": "Community & Training",
+    "year": 2023,
+    "summary": "Workshops and open toolkits that help teachers and therapists use AI-assisted tools responsibly and effectively.",
+    "description": "This program bundles hands-on workshops, printable toolkits, and short video guides that walk teachers, therapists, and families through using Elevate Minds' tools safely and effectively, plus general AI literacy so they can evaluate other assistive technology with a critical eye. Sessions are offered in-person and remotely, free of charge.",
+    "impactMetric": "25+ workshops hosted",
+    "team": ["Sam Whitfield", "Dr. Wei Chen"]
+  }
+]

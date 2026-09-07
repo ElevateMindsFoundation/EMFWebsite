@@ -1,0 +1,13 @@
+# Elevate Minds Foundation
+# The admin portal and authenticated-only pages are also marked noindex via
+# per-page meta tags (see src/components/SEO.tsx); the Disallow rules below
+# are a second layer for crawlers that don't render JS / read meta tags.
+User-agent: *
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /reset-password
+
+Sitemap: https://www.elevatemindsfoundation.org/sitemap.xml

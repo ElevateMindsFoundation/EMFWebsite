@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t1",
+    "quote": "The communication board gave our daughter a voice she didn't have before — and it cost our family nothing.",
+    "name": "Parent of a program participant",
+    "role": "Voice & Choice program"
+  },
+  {
+    "id": "t2",
+    "quote": "The sign language avatar tool let my son follow along in class for the first time without waiting on an interpreter.",
+    "name": "Parent of a program participant",
+    "role": "Sign Language Avatar pilot"
+  },
+  {
+    "id": "t3",
+    "quote": "As a teacher, the adaptive learning tool finally let me give each student a pace that actually fits them.",
+    "name": "Elementary school educator",
+    "role": "Adaptive Learning Paths"
+  },
+  {
+    "id": "t4",
+    "quote": "Everything is free, and the team never made us feel like we were asking for too much.",
+    "name": "Parent of a program participant",
+    "role": "Family Toolkit Orientation"
+  }
+]

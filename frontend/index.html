@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    <meta name="theme-color" content="#0E3056" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Elevate Minds Foundation — free AI-powered tools and programs for children with physical, developmental, and neurodiverse conditions."
+    />
+    <!--
+      Open Graph / social-sharing defaults. src/components/SEO.tsx overwrites
+      og:title and og:description per route once React mounts; og:image and
+      og:type stay fixed here since no page currently has a more specific
+      social image than the logo.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Elevate Minds Foundation" />
+    <meta property="og:title" content="Elevate Minds Foundation | Free AI Solutions for Every Child" />
+    <meta
+      property="og:description"
+      content="Elevate Minds Foundation — free AI-powered tools and programs for children with physical, developmental, and neurodiverse conditions."
+    />
+    <meta property="og:image" content="/logo.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Elevate Minds Foundation | Free AI Solutions for Every Child" />
+    <meta
+      name="twitter:description"
+      content="Elevate Minds Foundation — free AI-powered tools and programs for children with physical, developmental, and neurodiverse conditions."
+    />
+    <meta name="twitter:image" content="/logo.jpg" />
+    <title>Elevate Minds Foundation | Free AI Solutions for Every Child</title>
+  </head>
+  <body>
+    <script>
+      // Applied before paint to avoid a light-mode flash; mirrors the logic
+      // in src/store/useDarkMode.ts.
+      (function () {
+        try {
+          var stored = window.localStorage.getItem('emf-color-scheme');
+          var isDark =
+            stored === 'dark' ||
+            (stored !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) document.documentElement.classList.add('dark');
+        } catch (e) {
+          /* localStorage unavailable; default to light */
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

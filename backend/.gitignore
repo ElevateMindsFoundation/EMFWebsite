@@ -1,0 +1,16 @@
+# Local env (real secrets/DB URL) — the root .gitignore already ignores `.env` everywhere,
+# this is kept explicit for clarity when working inside backend/.
+.env
+.env.*.local
+
+node_modules/
+dist/
+
+# Prisma
+prisma/*.db
+prisma/migrations/dev.db
+
+# Dev-only seed credentials reference — never meant for source control.
+prisma/SEED_CREDENTIALS.md
+
+*.log
