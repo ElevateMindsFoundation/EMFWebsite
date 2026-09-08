@@ -15,6 +15,7 @@ import contactRouter from './routes/contact';
 import newsletterRouter from './routes/newsletter';
 import teamRouter from './routes/team';
 import testimonialsRouter from './routes/testimonials';
+import storiesRouter from './routes/stories';
 import adminRouter from './routes/admin';
 
 const app = express();
@@ -50,6 +51,7 @@ app.use('/api/contact', contactRouter);
 app.use('/api/newsletter', newsletterRouter);
 app.use('/api/team', teamRouter);
 app.use('/api/testimonials', testimonialsRouter);
+app.use('/api/stories', storiesRouter);
 app.use('/api/admin', adminRouter);
 
 // 404 for unmatched /api/* routes

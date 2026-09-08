@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { Home } from './pages/Home';
 import { Innovations } from './pages/Innovations';
@@ -14,7 +14,7 @@ import { ResetPassword } from './pages/ResetPassword';
 import { NewsEvents } from './pages/NewsEvents';
 import { NewsEventDetail } from './pages/NewsEventDetail';
 import { Donate } from './pages/Donate';
-import { Contact } from './pages/Contact';
+import { Stories } from './pages/Stories';
 import { Volunteer } from './pages/Volunteer';
 import { VolunteerDetail } from './pages/VolunteerDetail';
 import { Dashboard } from './pages/Dashboard';
@@ -28,6 +28,7 @@ import { AdminEarlyInterventions } from './pages/admin/AdminEarlyInterventions';
 import { AdminNewsEvents } from './pages/admin/AdminNewsEvents';
 import { AdminTeam } from './pages/admin/AdminTeam';
 import { AdminTestimonials } from './pages/admin/AdminTestimonials';
+import { AdminStories } from './pages/admin/AdminStories';
 import { AdminVolunteerOpportunities } from './pages/admin/AdminVolunteerOpportunities';
 import { AdminContactMessages } from './pages/admin/AdminContactMessages';
 import { AdminVolunteerHours } from './pages/admin/AdminVolunteerHours';
@@ -57,7 +58,9 @@ function App() {
           <Route path="news-events" element={<NewsEvents />} />
           <Route path="news-events/:id" element={<NewsEventDetail />} />
           <Route path="donate" element={<Donate />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="stories" element={<Stories />} />
+          {/* Contact is now merged into the About page; keep the old path working. */}
+          <Route path="contact" element={<Navigate to="/about#contact" replace />} />
           <Route path="volunteer" element={<Volunteer />} />
           <Route path="volunteer/:id" element={<VolunteerDetail />} />
           <Route
@@ -84,6 +87,7 @@ function App() {
             <Route path="news-events" element={<AdminNewsEvents />} />
             <Route path="team" element={<AdminTeam />} />
             <Route path="testimonials" element={<AdminTestimonials />} />
+            <Route path="stories" element={<AdminStories />} />
             <Route path="volunteer-opportunities" element={<AdminVolunteerOpportunities />} />
             <Route path="contact-messages" element={<AdminContactMessages />} />
             <Route path="volunteer-hours" element={<AdminVolunteerHours />} />

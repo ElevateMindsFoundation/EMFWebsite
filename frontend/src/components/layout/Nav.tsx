@@ -4,15 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Home,
   Lightbulb,
-  Sprout,
   Users,
   LogIn,
   LogOut,
   LayoutDashboard,
-  Newspaper,
   Gift,
-  Mail,
   HandHelping,
+  BookOpen,
   Menu,
   ShieldCheck,
   X,
@@ -28,14 +26,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', to: '/', icon: Home },
-  { label: 'Innovations', to: '/innovations', icon: Lightbulb },
-  { label: 'Early Interventions', to: '/early-interventions', icon: Sprout },
   { label: 'About Us', to: '/about', icon: Users },
-  { label: 'News & Events', to: '/news-events', icon: Newspaper },
-  { label: 'Donations', to: '/donate', icon: Gift },
-  { label: 'Contact', to: '/contact', icon: Mail },
+  { label: 'Innovations', to: '/innovations', icon: Lightbulb },
+  { label: 'Stories', to: '/stories', icon: BookOpen },
   { label: 'Volunteer', to: '/volunteer', icon: HandHelping },
+  { label: 'Donations', to: '/donate', icon: Gift },
 ];
 
 const linkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -52,9 +47,12 @@ function DesktopAuthItem() {
 
   if (!user) {
     return (
-      <NavLink to="/login" className={linkClasses}>
+      <NavLink
+        to="/login"
+        className="ml-1 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-600 focus-visible:outline-2 focus-visible:outline-accent"
+      >
         <LogIn className="h-4 w-4" aria-hidden="true" />
-        Sign-Up/Sign-In
+        Sign In
       </NavLink>
     );
   }
@@ -97,9 +95,13 @@ function MobileAuthItem({ onNavigate }: { onNavigate: () => void }) {
 
   if (!user) {
     return (
-      <NavLink to="/login" onClick={onNavigate} className={linkClasses}>
+      <NavLink
+        to="/login"
+        onClick={onNavigate}
+        className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
+      >
         <LogIn className="h-4 w-4" aria-hidden="true" />
-        Sign-Up/Sign-In
+        Sign In
       </NavLink>
     );
   }

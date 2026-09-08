@@ -141,6 +141,21 @@ export interface ApiVolunteerOpportunity {
   tags: string[];
 }
 
+export type ApiStoryStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+
+// A community-submitted story. Anyone can POST one (it lands as PENDING); the
+// public site lists only APPROVED stories. authorEmail is optional and never
+// exposed on the public list endpoint — it's for admins to follow up only.
+export interface ApiStory {
+  id: string;
+  authorName: string;
+  title: string;
+  body: string;
+  status: ApiStoryStatus;
+  authorEmail: string | null;
+  createdAt: string;
+}
+
 export interface ApiContactMessage {
   id: string;
   name: string;
@@ -173,6 +188,7 @@ export interface AdminStats {
   totalUsers: number;
   pendingVolunteerHours: number;
   unreadContactMessages: number;
+  pendingStories: number;
   totalDonations: number;
   totalDonationAmountCents: number;
 }

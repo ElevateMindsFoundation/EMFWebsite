@@ -5,13 +5,12 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { FacebookGlyph, InstagramGlyph, LinkedInGlyph, XGlyph } from '../ui/SocialIcons';
 
 const FOOTER_LINKS = [
-  { label: 'Innovations', to: '/innovations' },
-  { label: 'Early Interventions', to: '/early-interventions' },
   { label: 'About Us', to: '/about' },
-  { label: 'News & Events', to: '/news-events' },
-  { label: 'Donate', to: '/donate' },
+  { label: 'Innovations', to: '/innovations' },
+  { label: 'Stories', to: '/stories' },
   { label: 'Volunteer', to: '/volunteer' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Donate', to: '/donate' },
+  { label: 'Contact', to: '/about#contact' },
 ];
 
 const SOCIAL_LINKS = [

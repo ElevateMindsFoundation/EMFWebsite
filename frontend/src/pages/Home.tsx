@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HeartHandshake, ShieldCheck, Sparkles, Target } from 'lucide-react';
+import { HeartHandshake, ShieldCheck, Target } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Button } from '../components/ui/Button';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -29,16 +29,6 @@ export function Home() {
         </Suspense>
 
         <div className="relative mx-auto flex max-w-4xl flex-col items-start gap-6">
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-accent-light ring-1 ring-inset ring-white/20"
-          >
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
-            100% free, always
-          </motion.span>
-
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

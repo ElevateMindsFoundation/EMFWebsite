@@ -15,22 +15,30 @@ router.get(
   requireAuth,
   requireRole(['ADMIN']),
   asyncHandler(async (_req, res) => {
-    const [totalUsers, pendingVolunteerHours, unreadContactMessages, totalDonations, donationTotal] =
-      await prisma.$transaction([
-        prisma.user.count(),
-        prisma.volunteerHourLog.count({ where: { status: 'PENDING' } }),
-        prisma.contactMessage.count({ where: { isRead: false } }),
-        prisma.donation.count(),
-        prisma.donation.aggregate({
-          _sum: { amountCents: true },
-          where: { status: 'SUCCEEDED', type: 'MONETARY' },
-        }),
-      ]);
+    const [
+      totalUsers,
+      pendingVolunteerHours,
+      unreadContactMessages,
+      pendingStories,
+      totalDonations,
+      donationTotal,
+    ] = await prisma.$transaction([
+      prisma.user.count(),
+      prisma.volunteerHourLog.count({ where: { status: 'PENDING' } }),
+      prisma.contactMessage.count({ where: { isRead: false } }),
+      prisma.story.count({ where: { status: 'PENDING' } }),
+      prisma.donation.count(),
+      prisma.donation.aggregate({
+        _sum: { amountCents: true },
+        where: { status: 'SUCCEEDED', type: 'MONETARY' },
+      }),
+    ]);
 
     res.json({
       totalUsers,
       pendingVolunteerHours,
       unreadContactMessages,
+      pendingStories,
       totalDonations,
       totalDonationAmountCents: donationTotal._sum.amountCents ?? 0,
     });

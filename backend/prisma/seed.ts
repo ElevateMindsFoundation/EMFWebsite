@@ -204,6 +204,47 @@ async function seedVolunteerOpportunities() {
   console.log(`Seeded ${items.length} volunteer opportunities`);
 }
 
+// A few community stories so the public Stories page isn't empty on first
+// run. Two are pre-APPROVED (visible publicly); one is left PENDING so the
+// admin moderation queue has something to review out of the box.
+async function seedStories() {
+  const stories = [
+    {
+      id: 'story-maya-aac',
+      authorName: 'Renee, parent',
+      authorEmail: null,
+      title: 'My daughter found her voice',
+      body: "For years we struggled to communicate with Maya. The AAC tool from Elevate Minds gave her a way to tell us what she needs — and the first time she 'said' good morning, I cried. It costs us nothing, and it changed everything.",
+      status: 'APPROVED' as const,
+    },
+    {
+      id: 'story-james-volunteer',
+      authorName: 'James, volunteer',
+      authorEmail: null,
+      title: 'Volunteering that actually helps',
+      body: "I've volunteered in a lot of places, but here I can see exactly where my time goes. Helping test the early-screening tool with real families reminded me why this work matters.",
+      status: 'APPROVED' as const,
+    },
+    {
+      id: 'story-pending-example',
+      authorName: 'A community member',
+      authorEmail: 'submitter@example.com',
+      title: 'A story awaiting review',
+      body: "This is an example of a freshly submitted story. It stays hidden from the public Stories page until an admin approves it in the Stories moderation queue.",
+      status: 'PENDING' as const,
+    },
+  ];
+
+  for (const s of stories) {
+    await prisma.story.upsert({
+      where: { id: s.id },
+      update: {},
+      create: s,
+    });
+  }
+  console.log(`Seeded ${stories.length} stories`);
+}
+
 // Dev-only test accounts. Passwords are documented in
 // backend/prisma/SEED_CREDENTIALS.md (gitignored, local use only).
 async function seedUsers() {
@@ -256,6 +297,7 @@ async function main() {
   await seedNewsEvents();
   await seedTestimonials();
   await seedVolunteerOpportunities();
+  await seedStories();
   await seedUsers();
 }
 

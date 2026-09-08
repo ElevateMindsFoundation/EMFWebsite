@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, Clock, DollarSign, Loader2, Mail, Users } from 'lucide-react';
+import { AlertTriangle, BookOpen, Clock, DollarSign, Loader2, Mail, Users } from 'lucide-react';
 import type { AdminStats } from '../../types';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
@@ -21,6 +21,7 @@ const STAT_CARDS: {
   { key: 'totalUsers', label: 'Total Users', icon: Users, to: '/admin' },
   { key: 'pendingVolunteerHours', label: 'Pending Volunteer Hours', icon: Clock, to: '/admin/volunteer-hours' },
   { key: 'unreadContactMessages', label: 'Unread Messages', icon: Mail, to: '/admin/contact-messages' },
+  { key: 'pendingStories', label: 'Pending Stories', icon: BookOpen, to: '/admin/stories' },
   { key: 'totalDonations', label: 'Total Donations', icon: DollarSign, to: '/admin' },
 ];
 
@@ -30,6 +31,7 @@ const QUICK_LINKS = [
   { label: 'News & Events', to: '/admin/news-events' },
   { label: 'Team', to: '/admin/team' },
   { label: 'Testimonials', to: '/admin/testimonials' },
+  { label: 'Stories', to: '/admin/stories' },
   { label: 'Volunteer Opportunities', to: '/admin/volunteer-opportunities' },
 ];
 

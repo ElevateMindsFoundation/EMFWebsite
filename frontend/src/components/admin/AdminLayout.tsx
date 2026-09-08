@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import {
+  BookOpen,
   Clock,
   HandHelping,
   LayoutDashboard,
@@ -18,6 +19,7 @@ const ADMIN_NAV_ITEMS = [
   { label: 'News & Events', to: '/admin/news-events', icon: Newspaper, end: false },
   { label: 'Team', to: '/admin/team', icon: Users, end: false },
   { label: 'Testimonials', to: '/admin/testimonials', icon: Quote, end: false },
+  { label: 'Stories', to: '/admin/stories', icon: BookOpen, end: false },
   { label: 'Volunteer Opportunities', to: '/admin/volunteer-opportunities', icon: HandHelping, end: false },
   { label: 'Contact Messages', to: '/admin/contact-messages', icon: Mail, end: false },
   { label: 'Volunteer Hours', to: '/admin/volunteer-hours', icon: Clock, end: false },

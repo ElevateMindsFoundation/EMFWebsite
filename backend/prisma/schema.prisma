@@ -49,6 +49,12 @@ enum NewsEventType {
   EVENT
 }
 
+enum StoryStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 // ---------------------------------------------------------------------------
 // Models
 // ---------------------------------------------------------------------------
@@ -210,6 +216,22 @@ model Testimonial {
   quote        String
   photoUrl     String?
   isFeatured   Boolean @default(false)
+}
+
+// Community-submitted stories. Anyone can submit one (it lands as PENDING);
+// only APPROVED stories are shown publicly. authorEmail is optional and only
+// visible to admins (never returned by the public list endpoint).
+model Story {
+  id          String      @id @default(uuid())
+  authorName  String
+  authorEmail String?
+  title       String
+  body        String
+  status      StoryStatus @default(PENDING)
+  createdAt   DateTime    @default(now())
+
+  @@index([status])
+  @@index([createdAt])
 }
 
 model ContactMessage {
