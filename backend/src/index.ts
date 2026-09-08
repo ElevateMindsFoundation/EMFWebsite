@@ -1,3 +1,5 @@
+import path from 'node:path';
+import fs from 'node:fs';
 import express from 'express';
 import type { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
@@ -58,6 +60,18 @@ app.use('/api/admin', adminRouter);
 app.use('/api', (_req, res) => {
   res.status(404).json({ error: 'Not found' });
 });
+
+// Single-service deployment: serve the built frontend (copied to backend/public
+// by the build step) and let client-side routing handle every non-/api path.
+// Guarded by existsSync so local dev — where the frontend runs on its own Vite
+// server and backend/public doesn't exist — is unaffected.
+const frontendDir = path.resolve(__dirname, '..', 'public');
+if (fs.existsSync(frontendDir)) {
+  app.use(express.static(frontendDir));
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(frontendDir, 'index.html'));
+  });
+}
 
 // Centralized error handler. Never leaks stack traces or internal error
 // details to the client — only a safe message and status code.

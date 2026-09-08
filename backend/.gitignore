@@ -6,6 +6,9 @@
 node_modules/
 dist/
 
+# Built frontend copied in by `npm run build` (scripts/copy-frontend.js)
+public/
+
 # Prisma
 prisma/*.db
 prisma/migrations/dev.db
